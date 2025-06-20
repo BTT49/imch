@@ -58,6 +58,7 @@ def add_friend_button(username):
 
 def select_friend(sender, app_data, username):
     print(f"[DEBUG] Selected friend: {username}")
+    imgGet.get_image_url(username, folderName=userIMG_folder)
     bio = imch.decode_image(os.path.join(userIMG_folder, f"{username}.png"))
     dpg.set_value("bio_text", bio)
     dpg.configure_item("bio_text", readonly=True)
