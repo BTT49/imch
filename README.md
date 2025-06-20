@@ -7,7 +7,7 @@ Imch is a Python program that encodes hidden msg's in ur github pfp using stegan
 
 ## Installation
 
-just normal python program, u will also need thee libraries
+just normal python program. so just download the Program folder and run it in ur prefered way, but u will also need thee libraries:
 - dearpygui
 - os
 - glob
