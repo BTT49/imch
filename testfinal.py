@@ -25,6 +25,7 @@ user_bio = "This is my bio."
 current_user = "you"
 
 userIMG_folder = "userIMG"
+UrPFP_folder = "UrImgOutput"
 friends = []  # stores only usernames
 
 
@@ -70,10 +71,13 @@ def show_user_bio_popup():
 def submit_bio():
     username = dpg.get_value("edit_username")
     bio = dpg.get_value("edit_bio_text")
-    image_path = os.path.join(userIMG_folder, f"{username}.png")
+    image_path = os.path.join(UrPFP_folder, f"{username}.png")
 
     if not os.path.exists(image_path):
+        imgGet.get_image_url(username, "UrImgOutput")
         print(f"[DEBUG] No image for user '{username}'.")
+        print("Trying again after downloading image...")
+        submit_bio()  # Retry after downloading image
         return
 
     imch.encode_image(image_path, image_path, bio)
