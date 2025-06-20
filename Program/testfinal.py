@@ -5,13 +5,14 @@ import imchgpt as imch
 import imgGet as imgGet
 
 
-# ---------- USER BACKEND PLACEHOLDER ----------
 def decode(Txt):
     imgGet.get_image_url(Txt, folderName="userIMG")
     file = "userIMG/" + Txt + ".png"
     temp = imch.decode_image(file)
     print("Decoded message:", temp)
 
+
+# this just exist incase i wanna decode a specific pic for testing
 def mandecode(Txt):
     temp = imch.decode_image(Txt)
     print("Decoded message:", temp)
@@ -118,9 +119,9 @@ with dpg.window(tag="MainWindow"):
                 pass  # populated on load
 
             dpg.add_spacer(height=10)
-            dpg.add_button(label="➕ Add Friend", callback=add_friend_popup)
+            dpg.add_button(label="Add Friend", callback=add_friend_popup)
             dpg.add_spacer(height=20)
-            dpg.add_button(label="✏️ Edit My Bio", callback=show_user_bio_popup)
+            dpg.add_button(label="Edit My Bio", callback=show_user_bio_popup)
 
         with dpg.child_window(autosize_x=True, autosize_y=True):
             dpg.add_input_text(tag="bio_text", multiline=True, default_value="", readonly=True, width=-1, height=-1)

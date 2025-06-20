@@ -14,9 +14,7 @@ def download_image(url, user, folderName):
 
 def get_image_url(user, folderName):
     url = "https://github.com/" + user
-
     response = requests.get(url)
-
     soup = BeautifulSoup(response.text, 'html.parser')
     #find the avatar image of class 'avatar'
     image = soup.find('img', {'class': 'avatar'})

@@ -60,6 +60,3 @@ def decode_image(image_path):
     else:
         return "No hidden message found."
 
-# Example usage:
-# encode_image("rhaaaa.jpg", "enclotr.png", "hiiii")
-# print(decode_image("enclotr.png"))
